@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Rajan Sharma",
+  "type": "commonjs",
+  "main": "config/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node config/app.ts",
+    "dev": "nodemon config/app.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.4",
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^3.1.10",
+    "openai": "^5.11.0",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.1.0",
+    "@types/nodemailer": "^6.4.17",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node": "^20.19.4",
+    "nodemailer": "^7.0.5",
+    "tsc": "^2.0.4"
+  }
+}
