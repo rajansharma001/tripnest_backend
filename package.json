@@ -4,11 +4,11 @@
   "description": "",
   "license": "MIT",
   "author": "Rajan Sharma",
-  "type": "module",
+  "type": "commonjs",
   "main": "config/app.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node config/app.ts",
+    "start": "node dist/config/app.js",
     "dev": "nodemon config/app.ts"
   },
   "dependencies": {
