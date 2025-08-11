@@ -5,6 +5,7 @@ import {
 } from "../controller/userController/profileController";
 import { verifyRole } from "../middleware/roles/verifyRoles";
 import { upload } from "../utlis/fileUpload";
+import { getPublicUser } from "../controller/userController/getUserController";
 
 export const userRoute = Router();
 
@@ -15,3 +16,5 @@ userRoute.patch(
   verifyRole(["admin", "user"]),
   updateProfile
 );
+
+userRoute.get("/public-user", getPublicUser);
