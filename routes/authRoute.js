@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.authRoute = void 0;
+const express_1 = __importDefault(require("express"));
+const signupController_1 = require("../controller/authController/signupController");
+const verifyEmail_1 = require("../middleware/emails/verifyEmail");
+const signInController_1 = require("../controller/authController/signInController");
+const forgetPasswordController_1 = require("../controller/authController/forgetPasswordController");
+const logoutController_1 = require("../controller/authController/logoutController");
+const sessionController_1 = require("../controller/authController/sessionController");
+exports.authRoute = express_1.default.Router();
+exports.authRoute.post("/signup", signupController_1.signupController);
+exports.authRoute.get("/verify-email/:token", verifyEmail_1.verifEmail);
+exports.authRoute.post("/signin", signInController_1.signinController);
+exports.authRoute.get("/forget-password", forgetPasswordController_1.forgetPassword);
+exports.authRoute.patch("/forget-password-update/:token", forgetPasswordController_1.updateForgetPassword);
+exports.authRoute.get("/logout", logoutController_1.logoutController);
+exports.authRoute.get("/session-user", sessionController_1.sessionController);

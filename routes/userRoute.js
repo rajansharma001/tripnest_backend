@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userRoute = void 0;
+const express_1 = require("express");
+const profileController_1 = require("../controller/userController/profileController");
+const verifyRoles_1 = require("../middleware/roles/verifyRoles");
+const fileUpload_1 = require("../utlis/fileUpload");
+const getUserController_1 = require("../controller/userController/getUserController");
+exports.userRoute = (0, express_1.Router)();
+exports.userRoute.get("/profile", (0, verifyRoles_1.verifyRole)(["admin", "user"]), profileController_1.getProfile);
+exports.userRoute.patch("/profile-update/:id", fileUpload_1.upload.single("profileImg"), (0, verifyRoles_1.verifyRole)(["admin", "user"]), profileController_1.updateProfile);
+exports.userRoute.get("/public-user", getUserController_1.getPublicUser);
