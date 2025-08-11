@@ -1,14 +1,12 @@
 import dotenv from "dotenv";
 import cors from "cors";
-import express, { Request, Response } from "express";
+import express from "express";
 import { dbConnect } from "./dbConnect";
 import { authRoute } from "../routes/authRoute";
 import cookieParser from "cookie-parser";
-import jwt from "jsonwebtoken";
 import { adminRoute } from "../routes/adminRoute";
 import { userRoute } from "../routes/userRoute";
 import { tripRoute } from "../routes/tripRoute";
-import { User } from "../models/userSchema";
 dotenv.config();
 dbConnect();
 
