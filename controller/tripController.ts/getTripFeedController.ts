@@ -3,7 +3,7 @@ import { Trip } from "../../models/tirpScehma";
 
 export const GetTripFeed = async (req: Request, res: Response) => {
   try {
-    const getTripFeed = await Trip.find({ visibility: true }).sort({
+    const getTripFeed = await Trip.find().sort({
       createdAt: -1,
     });
     if (!getTripFeed) {
@@ -23,7 +23,7 @@ export const GetTripFeed = async (req: Request, res: Response) => {
 export const GetTripFeedById = async (req: Request, res: Response) => {
   try {
     const _id = req.params.id;
-    const getTripFeedById = await Trip.findOne({ _id, visibility: true });
+    const getTripFeedById = await Trip.findOne({ _id });
     if (!getTripFeedById) {
       return res.status(403).json({ error: "Trip not found." });
     }
